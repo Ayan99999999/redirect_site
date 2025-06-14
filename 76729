@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirect - Step 2</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; margin-top: 100px; }
+    .adbox { border: 2px dashed #aaa; padding: 20px; margin: 20px; }
+    #continue { display: none; margin-top: 30px; }
+  </style>
+  <script>
+    let timeLeft = 10;
+    const timer = () => {
+      if (timeLeft <= 0) {
+        document.getElementById("wait").style.display = "none";
+        document.getElementById("continue").style.display = "block";
+        clearInterval(countdown);
+      } else {
+        document.getElementById("counter").innerText = timeLeft;
+        timeLeft -= 1;
+      }
+    };
+    const countdown = setInterval(timer, 1000);
+  </script>
+</head>
+<body>
+  <h1>Final Step: Wait <span id="counter">10</span> seconds</h1>
+  <div class="adbox">🔥 Scroll down and continue to your download</div>
+  <div id="wait">Please wait...</div>
+  <div id="continue">
+    <a href="https://example.com" target="_blank">🎉 Go to Final Link</a>
+  </div>
+</body>
+</html>
